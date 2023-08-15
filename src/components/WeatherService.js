@@ -13,7 +13,7 @@ import { responsiveFontSizes } from '@mui/material';
 const WeatherService = () => {
   const [Weather,setWeather] = useState([]);
   const [City,setCity] = useState('London');
-  axios.get(`http://api.weatherapi.com/v1/current.json?key=2852962dde8446d1a0e130154231508&q=${City}`)
+  axios.get(`http://api.weatherapi.com/v1/current.json?key=${process.env.API_KEY}&q=${City}`)
   .then(res => {
       setWeather([res.data]);
       console.log(Weather)
